@@ -3,14 +3,21 @@ const path = require('path');
 
 const app = express();
 
-// Serve everything inside the parent folder (LARPWALLET)
-app.use(express.static(path.join(__dirname, '..')));
+// Serve static files from the root directory
+app.use(express.static(__dirname));
+
+// Serve images
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// Serve CSS
+app.use('/css', express.static(path.join(__dirname, 'css')));
 
 // Default route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'html', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
