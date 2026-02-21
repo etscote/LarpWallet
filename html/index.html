@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#111111">
+    <meta name="apple-mobile-web-app-title" content="Phantom">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="./logo.png">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="manifest" href="./manifest.json">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Phantom</title>
+    <style>
+        #content-wrapper {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+#tab-content {
+  height: 60px; /* height of spinner zone */
+}
+
+/* FOOTER BLOCKER - This will block content from showing through */
+.footer-blocker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top, #111111 70%, transparent);
+  z-index: 999;
+  pointer-events: none;
+}
+        
+.spinner {
+  font-size: 36px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.spinner.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.43em;              /* closer to center */
+  bottom: 0;
+  width: 0.084em;
+  height: 0.2777em;
+  border-radius: 0.0655em;
+  background-color: transparent;
+  transform-origin: center -0.11em;  /* slightly closer pivot */
+  animation: spinner-fade 1s infinite linear;
+}
+
+/* 8 blades = 45° apart, delay = 0.125s apart */
+.spinner .spinner-blade:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: 0s;
+}
+.spinner .spinner-blade:nth-child(2) {
+  transform: rotate(45deg);
+  animation-delay: 0.125s;
+}
+.spinner .spinner-blade:nth-child(3) {
+  transform: rotate(90deg);
+  animation-delay: 0.25s;
+}
+.spinner .spinner-blade:nth-child(4) {
+  transform: rotate(135deg);
+  animation-delay: 0.375s;
+}
+.spinner .spinner-blade:nth-child(5) {
+  transform: rotate(180deg);
+  animation-delay: 0.5s;
+}
+.spinner .spinner-blade:nth-child(6) {
+  transform: rotate(225deg);
+  animation-delay: 0.625s;
+}
+.spinner .spinner-blade:nth-child(7) {
+  transform: rotate(270deg);
+  animation-delay: 0.75s;
+}
+.spinner .spinner-blade:nth-child(8) {
+  transform: rotate(315deg);
+  animation-delay: 0.875s;
+}
+
+@keyframes spinner-fade {
+  0%   { background-color: #69717d; }
+  100% { background-color: transparent; }
+}
+        html,
+          body {
+            margin: 0;
+            min-width: 360px;
+            min-height: 600px;
+            background-color: #111111;
+          }
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, menu, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+}
+        .eqipuR {
+    padding: 15px 0px;
+    margin: 0px 12px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+        .iHFWRJ {
+    padding: 15px 0px;
+    margin: 0px 12px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+        .iHFWRJ ::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+}
+        .cDkSdw {
+    flex: 1 1 0%;
+    display: flex
+;
+    justify-content: space-around;
+    padding: 0px 10px;
+}
+        .kUahUH {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 2px;
+    background-color: rgb(171, 159, 242);
+}
+        .ktDIEy {
+    position: relative;
+    height: 60px;
+    display: flex
+;
+}
+        ._51gazn1xp, ._51gazn1xq:hover {
+            background-color: #232323 !important;
+        }
+        ._51gazn1y4, ._51gazn1y5:hover {
+            background-color: #232323 !important;
+        }
+    </style>
+    <style id="_goober">
+        @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}
+    </style>
+    <style data-styled="active" data-styled-version="6.1.19"></style>
+    <style id="detectElementResize" type="text/css">
+        @keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; z-index: -1; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }
+    </style>
+</head>
+
+<body style="font-family: Inter; background-color: #111111 !important;">
+    <!-- Settings Page -->
+    <div id="settingsPage" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #111111; z-index: 9999; overflow-y: auto;">
+        <div style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h1 style="color: #fff; font-size: 24px; font-weight: 600; margin: 0;">Settings</h1>
+                <button id="closeSettings" style="background: none; border: none; color: #999; font-size: 24px; cursor: pointer; padding: 0; width: 32px; height: 32px;">✕</button>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h2 style="color: #999; font-size: 14px; font-weight: 600; margin-bottom: 15px; text-transform: uppercase;">PROFILE</h2>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Emoji</label>
+                    <input id="settingsEmoji" type="text" placeholder="💎" maxlength="2"
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Username</label>
+                    <input id="settingsUsername" type="text" placeholder="@username" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Name</label>
+                    <input id="settingsAccountName" type="text" placeholder="Account name" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+            </div>
+
+            <!-- Currency Sections -->
+            <div id="currencyInputs">
+                <!-- Solana -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <img src="/images/solana.avif" style="width: 24px; height: 24px; border-radius: 50%;" />
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">Solana (SOL)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-sol" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <!-- Bitcoin -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #f7931a; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 12px;">₿</div>
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">Bitcoin (BTC)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-btc" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <!-- USDT -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #26a17b; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 10px;">₮</div>
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">Tether (USDT)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-usdt" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <!-- XRP -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #23292f; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 12px;">X</div>
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">XRP (XRP)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-xrp" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <!-- Polygon -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #8247e5; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 12px;">◆</div>
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">Polygon (POL)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-pol" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+
+                <!-- USDC -->
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: #2775ca; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 10px;">$</div>
+                        <h3 style="color: #fff; font-size: 16px; font-weight: 600; margin: 0;">USD Coin (USDC)</h3>
+                    </div>
+                    <label style="color: #999; font-size: 14px; display: block; margin-bottom: 8px;">Amount</label>
+                    <input id="amount-usdc" type="number" step="0.00001" placeholder="0" 
+                           style="width: 100%; padding: 12px 16px; background: #232323; border: none; border-radius: 8px; color: #fff; font-size: 16px; font-family: Inter;">
+                </div>
+            </div>
+
+            <button id="saveSettings" 
+                    style="width: 100%; padding: 16px; background: #ab9ff2; border: none; border-radius: 12px; color: #111; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 20px; margin-bottom: 40px; font-family: Inter;">
+                Save Changes
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage">
+    <div id="root">
+        <div class="obdlrx2x">
+            <div class="sc-hvZCij TKpht" style="    display: flex
+;
+    flex-direction: column;
+    height: 100%;">
+                <section justifycontent="space-between" height="59" class="sc-bjxVRI bZlokz" style="position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;">
+                    <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1c8 _51gaznkt _51gazn1me" style="padding: 0.45rem 1rem; background-color: #111111 !important;">
+                        <button style="height: 38px !important; width: 38px !important" data-testid="settings-menu-open-button" type="button" class="t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _1cg1k9y3 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve _1cg1k9y2 _51gaznu6 _51gaznv6 _51gaznx6 _51gaznw6 _51gazn1kj _51gazn1me _51gazn1mr _51gazn1pl _51gazn1l6 _51gazn5q0 _1cg1k9y5 _1cg1k9y1 _51gazn1y4 _51gazn44v _51gazn1b4 _51gazn1cq _51gazn1t4"><span id="profileEmoji" style="font-size: 18px;">💎</span></button>
+                        <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gazn1c8 _51gazn1h4">
+                            <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1c8 _51gazn1me _51gazn1l6">
+                                <div id="username" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn45a _51gazn15 _51gazn1kq nfn5t1d _51gazn1z _51gazn3l">@username</div>
+                            </div>
+                            <div class="_1mupv7ev _51gaznxg _51gazn1kj _51gazn1me" data-testid="tooltip_interactive-wrapper">
+                                <div role="button" tabindex="0" aria-pressed="false" class="_1mupv7eb _51gazn1kj _51gazn1ml _51gazn45a">
+                                    <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1h4 _51gazn1me _51gazn1l6">
+                                        <div style="font-size: 1.4rem !important" id="accountName" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn44v _51gazn11 _51gazn1kq nfn5t1e _51gazn1z _51gazn3l">name</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1me">
+                            <button style="color: #FFFFFF !important" data-testid="side-panel-menu-open-button" aria-label="Open" class="nfn5t14 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve nfn5t10 _51gazn57 _51gazn3l _51gazn6t _51gazn1z _51gazn1kj _51gazn1me _51gazn1mz _51gazn45a nfn5t13 _51gazn44w">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="26" height="26" fill="#FFFFFF"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M528 320C528 434.9 434.9 528 320 528C205.1 528 112 434.9 112 320C112 205.1 205.1 112 320 112C434.9 112 528 205.1 528 320zM64 320C64 461.4 178.6 576 320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320zM296 184L296 320C296 328 300 335.5 306.7 340L402.7 404C413.7 411.4 428.6 408.4 436 397.3C443.4 386.2 440.4 371.4 429.3 364L344 307.2L344 184C344 170.7 333.3 160 320 160C306.7 160 296 170.7 296 184z"/></svg>
+                            </button>
+                            <button style="color: #FFFFFF !important" data-testid="search-open-button" class="nfn5t14 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve nfn5t10 _51gazn57 _51gazn3l _51gazn6t _51gazn1z _51gazn1kj _51gazn1me _51gazn1mz _51gazn45a nfn5t13 _51gazn44w" aria-label="Search">
+                                <svg fill="none" viewBox="0 0 24 24" width="24px" height="24px" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-4.35-4.35M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <div id="content-wrapper">
+                <div id="tab-content" data-testid="tab-content-/" class="sc-gyRCUT dnSVWO" style="opacity: 1; transform: none">
+                    <div style="margin-top: 1.3rem" class="spinner center">
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                        <div class="spinner-blade"></div>
+                      </div>
+                    <div class="sc-kSaXSp csbEDz" style="opacity: 1; transform: none; margin-top: 3.6rem">
+                        <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gaznkv _51gazn6t _51gazn1lj _51gazn1lb" style="position: relative;">
+                            <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gaznhp">
+                                <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gaznl3">
+                                    <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gaznkv _51gazn1me _51gazn1mr _51gaznex" style="align-items: flex-start !important; margin-left: 16px; margin-top: 14px !important;">
+                                        <div style="gap: 0.8rem; align-items: flex-start;" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq">
+                                            <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gazn1l6 _51gazn1c8 _51gazn1me">
+                                                <div style="font-size: 38px; white-space: nowrap;">
+                                                    <div id="money" style="font-size: 2.45rem !important" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn4fa _51gaznf">$0.00</div>
+                                                </div>
+                                            </div>
+                                            <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1me _51gaznku _51gazn1mr">
+                                                <div id="pnl" style="font-weight: 600; font-size: 15px;" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn46y _51gazno _51gaznbi">+$0.00</div>
+                                                <div id="change" class="t8qixv0 t8qixv1 _51gazntd _51gaznud _51gaznwd _51gaznvd _51gazn1x _51gazn3j _51gazn53 _51gazn6p _51gazn8 _51gazn1kf _51gazn46y _51gaznv" style="background-color: rgba(48, 164, 108, 0.2); font-weight: 600; font-size: 13px;">+0.00%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="t8qixv0 t8qixv1 _51gaznbb _51gaznef _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq _51gaznl3">
+                                        <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nq">
+                                            <div class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gaznkv _51gazn1c8">
+                                                <button style="gap: 0.4rem !important;" type="button" class="p1bbpz5 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve p1bbpz0 _51gazntk _51gaznuk _51gaznwk _51gaznvk _51gazn1z _51gazn3l _51gazn5b _51gazn6x _51gazn1kc _51gaznkt _51gazn5q0 _51gazn1c8 _51gazn1me _51gazn1mr _51gazn1nd _51gazn1h4 p1bbpz7 p1bbpz2 _51gazn1xp _51gazn1w2 _51gazn45a p1bbpza">
+                                                    <svg style="height: 28px; width: 28px" fill="none" viewBox="0 0 24 24" width="28px" height="28px" stroke-linecap="round" stroke-linejoin="round" class="p1bbpzf p1bbpzb _51gazn1b2 _51gazn1co p1bbpzh p1bbpzd _51gazn464">
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 14 1.972 4.93c.692 1.73 3.165 1.658 3.755-.11l4.008-12.025c.521-1.564-.966-3.051-2.53-2.53L5.18 8.273c-1.768.59-1.84 3.063-.11 3.755zm0 0 3-3"></path>
+                                                    </svg>
+                                                    <div style="color: #999" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn4fa _51gazn15 _51gazn2 _51gazn1kq p1bbpzj _51gazn1c8">Send</div>
+                                                </button>
+                                                <button style="gap: 0.4rem !important;" type="button" class="p1bbpz5 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve p1bbpz0 _51gazntk _51gaznuk _51gaznwk _51gaznvk _51gazn1z _51gazn3l _51gazn5b _51gazn6x _51gazn1kc _51gaznkt _51gazn5q0 _51gazn1c8 _51gazn1me _51gazn1mr _51gazn1nd _51gazn1h4 p1bbpz7 p1bbpz2 _51gazn1xp _51gazn1w2 _51gazn45a p1bbpza">
+                                                    <svg style="height: 28px; width: 28px" fill="none" viewBox="0 0 24 24" width="28px" height="28px" stroke-linecap="round" stroke-linejoin="round" class="p1bbpzf p1bbpzb _51gazn1b2 _51gazn1co p1bbpzh p1bbpzd _51gazn464">
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 14-4 4m0 0 4 4m-4-4h11a4 4 0 0 0 4-4m-5-4 4-4m0 0-4-4m4 4H8a4 4 0 0 0-4 4"></path>
+                                                    </svg>
+                                                    <div style="color: #999" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn4fa _51gazn15 _51gazn2 _51gazn1kq p1bbpzj _51gazn1c8">Swap</div>
+                                                </button>
+                                                <button style="gap: 0.4rem !important;" type="button" class="p1bbpz5 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve p1bbpz0 _51gazntk _51gaznuk _51gaznwk _51gaznvk _51gazn1z _51gazn3l _51gazn5b _51gazn6x _51gazn1kc _51gaznkt _51gazn5q0 _51gazn1c8 _51gazn1me _51gazn1mr _51gazn1nd _51gazn1h4 p1bbpz7 p1bbpz2 _51gazn1xp _51gazn1w2 _51gazn45a p1bbpza">
+                                                    <svg style="height: 28px; width: 28px" fill="none" viewBox="0 0 24 24" width="28px" height="28px" stroke-linecap="round" stroke-linejoin="round" class="p1bbpzf p1bbpzb _51gazn1b2 _51gazn1co p1bbpzh p1bbpzd _51gazn464">
+                                                        <path fill="currentColor" fill-rule="evenodd" d="M5.5 6.1a.6.6 0 0 1 .6-.6h.8a.6.6 0 0 1 .6.6v.8a.6.6 0 0 1-.6.6h-.8a.6.6 0 0 1-.6-.6zM5.5 17.1a.6.6 0 0 1 .6-.6h.8a.6.6 0 0 1 .6.6v.8a.6.6 0 0 1-.6.6h-.8a.6.6 0 0 1-.6-.6zM16.5 6.1a.6.6 0 0 1 .6-.6h.8a.6.6 0 0 1 .6.6v.8a.6.6 0 0 1-.6.6h-.8a.6.6 0 0 1-.6-.6z"
+                                                        clip-rule="evenodd"></path>
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 16a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM14 5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2z"></path>
+                                                        <path fill="currentColor" d="M13 14a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zM13 20a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zM19 20a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zM19 14a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zM16 17a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1z"></path>
+                                                    </svg>
+                                                    <div style="color: #999" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn4fa _51gazn15 _51gazn2 _51gazn1kq p1bbpzj _51gazn1c8">Receive</div>
+                                                </button>
+                                                <button style="gap: 0.4rem !important;" id="openSettings" class="p1bbpz5 t8qixv0 t8qixvf t8qixv1 t8qixv6 t8qixve p1bbpz0 _51gazntk _51gaznuk _51gaznwk _51gaznvk _51gazn1z _51gazn3l _51gazn5b _51gazn6x _51gazn1kc _51gaznkt _51gazn5q0 _51gazn1c8 _51gazn1me _51gazn1mr _51gazn1nd _51gazn1h4 p1bbpz7 p1bbpz2 _51gazn1xp _51gazn1w2 _51gazn45a p1bbpza">
+                                                    <svg style="height: 28px; width: 28px" fill="none" viewBox="0 0 24 24" width="28px" height="28px" stroke-linecap="round" stroke-linejoin="round" class="p1bbpzf p1bbpzb _51gazn1b2 _51gazn1co p1bbpzh p1bbpzd _51gazn464">
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v22m5-18H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"></path>
+                                                    </svg>
+                                                    <div style="color: #999" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn4fa _51gazn15 _51gazn2 _51gazn1kq p1bbpzj _51gazn1c8">Buy</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="t8qixv0 t8qixv1 _51gaznbb _51gaznef _51gazn8 _51gazn1kj _51gazn1m7 _51gazn1nr _51gazn1mv _51gazn1me _51gaznkv _51gaznxg" style="margin-top: 0.8rem;">
+                                <div class="_51gazn1kj _51gazn1nd _51gazn1lb _51gaznxg _51gaznzd _51gazn23 _51gaznd7">
+                                    <div class="_51gazn1kj _51gazn1nr _51gaznkx _51gazn3n" draggable="false" style="transform: none; user-select: none; touch-action: pan-y;">
+                                        <div>
+                                            <div style="font-size: 1.35rem; display: flex !important; align-items: center; justify-content: center;" class="t8qixv0 t8qixv1 _51gazn8 _51gazn1kf _51gazn44v _51gaznp _51gazn1kt">Tokens
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="fill: #999;max-width: 18px;min-width: 18px;margin-left: 4px;"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"></path></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="width: 100%; position: relative;">
+                                    <div style="overflow: visible">
+                                        <div aria-label="grid" aria-readonly="true" class="ReactVirtualized__Grid ReactVirtualized__List" role="grid" tabindex="0" style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 100%; will-change: transform; overflow: hidden;">
+                                            <div class="ReactVirtualized__Grid__innerScrollContainer" role="row" style="width: 100%; height: 84px; max-height: 84px; overflow: hidden; position: relative;">
+                                                <!-- Tokens will be dynamically inserted here -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="resize-triggers">
+                                        <div class="expand-trigger">
+                                            <div style="width: 359px; height: 169px;"></div>
+                                        </div>
+                                        <div class="contract-trigger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resize-triggers">
+                                <div class="expand-trigger">
+                                    <div style="width: 359px; height: 443px;"></div>
+                                </div>
+                                <div class="contract-trigger"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- FOOTER BLOCKER - Gradient overlay to hide content -->
+                <div class="footer-blocker"></div>
+                
+                <div class="sc-jtbcEm ktDIEy" style="position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; margin-bottom: 2rem">
+                    <img src="/images/footer.jpeg" style="width: 100%; align-self: center;">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="wallet.js"></script>
+</body>
+</html>
