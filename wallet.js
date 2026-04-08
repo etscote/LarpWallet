@@ -271,7 +271,7 @@ const ShopifyApp = {
     const defs = [
       { label: 'Total sales',     val: () => '$' + this.data.sales },
       { label: 'Orders',          val: () => this.data.orders       },
-      { label: 'Conv. rate',      val: () => this.data.conv + '%'   },
+      { label: 'Conversion rate', val: () => this.data.conv + '%'   },
       { label: 'Gross sales',     val: () => '$' + this.data.gross  },
     ];
     const pages = [[0,1,2],[1,2,3],[2,3,0],[3,0,1]];
