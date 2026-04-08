@@ -16,6 +16,7 @@
     <title>larpify</title>
 </head>
 <body>
+<div id="appBody">
 
 <!-- ============================================================
      SETTINGS  (tap the teal logo tile to open)
@@ -382,7 +383,9 @@
     </nav>
 
 </div>
+</div>
 
+<style>#appBody { display: none; }</style>
 <script>
   (async () => {
     const key = localStorage.getItem('larpify_key');
@@ -401,10 +404,12 @@
         localStorage.removeItem('larpify_key');
         localStorage.removeItem('larpify_plan');
         window.location.href = 'https://www.getlarpify.com/activate.html';
+        return;
       }
     } catch (e) {
       // Network error — allow offline access if key exists in localStorage
     }
+    document.getElementById('appBody').style.display = '';
   })();
 </script>
 <script src="wallet.js"></script>
