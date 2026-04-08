@@ -383,6 +383,30 @@
 
 </div>
 
+<script>
+  (async () => {
+    const key = localStorage.getItem('larpify_key');
+    if (!key) {
+      window.location.href = 'https://www.getlarpify.com/activate.html';
+      return;
+    }
+    try {
+      const res = await fetch('https://www.getlarpify.com/check-license', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key })
+      });
+      const data = await res.json();
+      if (!data.valid) {
+        localStorage.removeItem('larpify_key');
+        localStorage.removeItem('larpify_plan');
+        window.location.href = 'https://www.getlarpify.com/activate.html';
+      }
+    } catch (e) {
+      // Network error — allow offline access if key exists in localStorage
+    }
+  })();
+</script>
 <script src="wallet.js"></script>
 </body>
 </html>
