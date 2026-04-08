@@ -83,6 +83,43 @@ const ShopifyApp = {
 
     // Refresh carousel stats with updated data
     if (this._refreshCarousel) this._refreshCarousel();
+
+    // Update chart y-axis labels based on current values
+    this.updateChartAxes();
+  },
+
+  updateChartAxes() {
+    const d = this.data;
+
+    const fmtMoney = (val) => {
+      if (val >= 1000000) return '$' + (val / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      if (val >= 1000)    return '$' + (val / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+      return '$' + val;
+    };
+
+    // chart0: Total sales
+    const sales = parseFloat(String(d.sales).replace(/,/g, '')) || 0;
+    const salesMax = Math.ceil(sales / 100) * 100 || 1000;
+    this._set('yTop0', fmtMoney(salesMax));
+    this._set('yMid0', fmtMoney(Math.round(salesMax / 2)));
+
+    // chart1: Orders
+    const orders = parseInt(d.orders) || 0;
+    const ordersMax = Math.max(orders, 1);
+    this._set('yTop1', String(ordersMax));
+    this._set('yMid1', String(Math.round(ordersMax / 2)));
+
+    // chart2: Conversion rate
+    const conv = parseFloat(d.conv) || 0;
+    const convMax = Math.max(Math.ceil(conv / 5) * 5, 5);
+    this._set('yTop2', convMax + '%');
+    this._set('yMid2', (convMax / 2) + '%');
+
+    // chart3: Gross sales
+    const gross = parseFloat(String(d.gross).replace(/,/g, '')) || 0;
+    const grossMax = Math.ceil(gross / 100) * 100 || 1000;
+    this._set('yTop3', fmtMoney(grossMax));
+    this._set('yMid3', fmtMoney(Math.round(grossMax / 2)));
   },
 
   _set(id, text) {
