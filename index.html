@@ -390,7 +390,6 @@
   (async () => {
     // Save key from URL params if coming from activate page
     const params = new URLSearchParams(window.location.search);
-    alert('URL: ' + window.location.href + ' | key param: ' + params.get('key') + ' | localStorage: ' + localStorage.getItem('larpify_key'));
     if (params.get('key')) {
       localStorage.setItem('larpify_key', params.get('key'));
       localStorage.setItem('larpify_plan', params.get('plan') || '');
