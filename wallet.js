@@ -283,7 +283,7 @@ const ShopifyApp = {
       const ids = prefix === 'n'
         ? ['ncol0label','ncol0val','ncol1label','ncol1val','ncol2label','ncol2val']
         : ['col0label',  'col0val', 'col1label',  'col1val', 'col2label',  'col2val'];
-      const texts = [defs[p].label, defs[p].val(), defs[s].label, defs[s].val(), defs[t].short, defs[t].val()];
+      const texts = [defs[p].label, defs[p].val(), defs[s].label, defs[s].val(), defs[t].label, defs[t].val()];
       ids.forEach((id, i) => { const el = document.getElementById(id); if (el) el.textContent = texts[i]; });
     };
 
