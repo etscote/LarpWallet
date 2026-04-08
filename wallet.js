@@ -269,10 +269,10 @@ const ShopifyApp = {
     const areaB     = document.getElementById('chartAreaB');
 
     const defs = [
-      { label: 'Total sales',     val: () => '$' + this.data.sales },
-      { label: 'Orders',          val: () => this.data.orders       },
-      { label: 'Conversion rate', val: () => this.data.conv + '%'   },
-      { label: 'Gross sales',     val: () => '$' + this.data.gross  },
+      { label: 'Total sales',     short: 'Total sales',  val: () => '$' + this.data.sales },
+      { label: 'Orders',          short: 'Orders',       val: () => this.data.orders       },
+      { label: 'Conversion rate', short: 'Conversion',   val: () => this.data.conv + '%'   },
+      { label: 'Gross sales',     short: 'Gross sales',  val: () => '$' + this.data.gross  },
     ];
     const pages = [[0,1,2],[1,2,3],[2,3,0],[3,0,1]];
     let current = 0, animating = false, swiping = false;
@@ -283,7 +283,7 @@ const ShopifyApp = {
       const ids = prefix === 'n'
         ? ['ncol0label','ncol0val','ncol1label','ncol1val','ncol2label','ncol2val']
         : ['col0label',  'col0val', 'col1label',  'col1val', 'col2label',  'col2val'];
-      const texts = [defs[p].label, defs[p].val(), defs[s].label, defs[s].val(), defs[t].label, defs[t].val()];
+      const texts = [defs[p].label, defs[p].val(), defs[s].label, defs[s].val(), defs[t].short, defs[t].val()];
       ids.forEach((id, i) => { const el = document.getElementById(id); if (el) el.textContent = texts[i]; });
     };
 

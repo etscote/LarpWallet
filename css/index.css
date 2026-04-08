@@ -438,9 +438,9 @@ button { font-family: inherit; cursor: pointer; }
     color: #9ca3af;
     font-weight: 600;
     margin-bottom: 3px;
-    white-space: normal;
-    overflow: visible;
-    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .stat-col:first-child .stat-label {
