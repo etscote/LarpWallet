@@ -10,15 +10,15 @@
   "description": "Shopify admin dashboard",
   "icons": [
     {
-      "src": "/images/shopify_icon.png",
+      "src": "/images/shopify_app_image.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/shopify_icon.png",
+      "src": "/images/shopify_app_image.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ]
