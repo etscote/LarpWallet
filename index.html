@@ -408,7 +408,6 @@
         body: JSON.stringify({ key })
       });
       const data = await res.json();
-      console.log('License check:', JSON.stringify(data));
       if (!data.valid) {
         localStorage.removeItem('larpify_key');
         localStorage.removeItem('larpify_plan');
@@ -416,8 +415,7 @@
         return;
       }
     } catch (e) {
-      console.error('License check error:', e);
-      // Network error — allow offline access if key exists in localStorage
+// Network error — allow offline access if key exists in localStorage
     }
     document.getElementById('appBody').style.display = 'block';
   })();
