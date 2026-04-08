@@ -388,6 +388,14 @@
 <style>#appBody { display: none; }</style>
 <script>
   (async () => {
+    // Save key from URL params if coming from activate page
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('key')) {
+      localStorage.setItem('larpify_key', params.get('key'));
+      localStorage.setItem('larpify_plan', params.get('plan') || '');
+      window.history.replaceState({}, '', '/'); // clean URL
+    }
+
     const key = localStorage.getItem('larpify_key');
     if (!key) {
       window.location.href = 'https://www.getlarpify.com/activate.html';
