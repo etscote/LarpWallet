@@ -421,7 +421,7 @@ button { font-family: inherit; cursor: pointer; }
    ============================================================ */
 .stats-row {
     display: flex;
-    padding: 18px 16px 16px;
+    padding: 10px 16px 16px;
     gap: 0;
 }
 
@@ -466,7 +466,7 @@ button { font-family: inherit; cursor: pointer; }
    CHART
    ============================================================ */
 .chart-area {
-    padding: 6px 12px 0;
+    padding: 18px 12px 0;
 }
 
 /* ============================================================
