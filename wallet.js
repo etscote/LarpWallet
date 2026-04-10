@@ -156,7 +156,7 @@ const ShopifyApp = {
     const speed  = document.querySelector('.speed-btn.active')?.dataset.speed || 'fast';
 
     const title = `Shopify`;
-    const body  = `${store} has a new order for ${items} item${items !== 1 ? 's' : ''} totaling $${amount} from Online Store.`;
+    const body  = `${store} has a new order for ${items} item${items !== 1 ? 's' : ''} totaling $${amount}.`;
 
     if (!('Notification' in window)) {
       alert('Notifications not supported on this browser.');
