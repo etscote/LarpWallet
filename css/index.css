@@ -185,8 +185,8 @@ button { font-family: inherit; cursor: pointer; }
     min-height: 100vh;
     margin-top: calc(50px + env(safe-area-inset-top, 0px));
     background: #fff;
-    border-top-left-radius: 26px;
-    border-top-right-radius: 26px;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
 }
 
 /* ============================================================
