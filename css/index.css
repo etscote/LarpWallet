@@ -183,10 +183,10 @@ button { font-family: inherit; cursor: pointer; }
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-top: calc(40px + env(safe-area-inset-top, 0px));
+    margin-top: calc(50px + env(safe-area-inset-top, 0px));
     background: #fff;
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 /* ============================================================
