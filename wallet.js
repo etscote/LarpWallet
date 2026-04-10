@@ -149,15 +149,14 @@ const ShopifyApp = {
 
   async pushNotification() {
     const g = id => document.getElementById(id).value.trim();
-    const product  = g('notifProduct')  || 'New item';
-    const amount   = g('notifAmount')   || '0.00';
-    const buyer    = g('notifBuyer')    || 'Someone';
-    const location = g('notifLocation') || 'somewhere';
-    const count = Math.min(Math.max(parseInt(g('notifCount')) || 3, 1), 50);
-    const speed = document.querySelector('.speed-btn.active')?.dataset.speed || 'fast';
+    const store  = g('notifStore')  || this.data.storeName || 'My Store';
+    const items  = parseInt(g('notifItems')) || 1;
+    const amount = g('notifAmount') || '0.00';
+    const count  = Math.min(Math.max(parseInt(g('notifCount')) || 3, 1), 50);
+    const speed  = document.querySelector('.speed-btn.active')?.dataset.speed || 'fast';
 
-    const title = `${this.data.storeName} · New order $${amount}`;
-    const body  = `${buyer} from ${location} bought ${product}`;
+    const title = `Shopify`;
+    const body  = `${store} has a new order for ${items} item${items !== 1 ? 's' : ''} totaling $${amount} from Online Store.`;
 
     if (!('Notification' in window)) {
       alert('Notifications not supported on this browser.');
@@ -188,11 +187,13 @@ const ShopifyApp = {
       ]);
     } catch (_) {}
 
+    const icon = '/images/shopify_icon.png';
+
     const fire = (opts) => {
       if (reg) {
-        reg.showNotification(title, { body, ...opts });
+        reg.showNotification(title, { body, icon, ...opts });
       } else {
-        new Notification(title, { body });
+        new Notification(title, { body, icon });
       }
     };
 
