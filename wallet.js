@@ -149,7 +149,7 @@ const ShopifyApp = {
 
   async pushNotification() {
     const g = id => document.getElementById(id).value.trim();
-    const store  = g('notifStore')  || this.data.storeName || 'My Store';
+    const store  = g('notifStore')  || this.data.storeName || 'Larpify';
     const items  = parseInt(g('notifItems')) || 1;
     const amount = g('notifAmount') || '0.00';
     const count  = Math.min(Math.max(parseInt(g('notifCount')) || 3, 1), 50);
